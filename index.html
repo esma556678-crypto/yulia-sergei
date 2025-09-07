@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свадьба Ильи и Эсмы</title>
+
+  <!-- Подключаем красивые шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f5f0;
+      color: #44362f;
+      line-height: 1.8;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Great Vibes', cursive;
+      color: #8b5a2b;
+    }
+
+    .section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .ornament {
+      width: 70%;
+      max-width: 300px;
+      margin: 30px auto;
+      opacity: 0.7;
+    }
+
+
+    /* Блок 1 — Главный экран */
+    #home {
+      background: url('im1.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      position: relative;
+    }
+
+    #home .content {
+      text-align: center;
+      padding: 50px 25px 20px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      max-width: 90%;
+      margin-top: 80px;
+      animation: fadeIn 1.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #home h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.5rem;
+      margin-bottom: 12px;
+    }
+
+    #home .date {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+
+    .music-button {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #play-music {
+      padding: 12px 25px;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+      transition: 0.3s;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #play-music:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+.down-arrow {
+  position: absolute;
+  bottom: 50px;
+  right: 30px;
+  width: 60px;
+  height:60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  color: white;
+  animation: bounce 2s infinite;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 10; 
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+        /* Блок 2 — Приветствие */
+    #welcome {
+      background: #fffaf3;
+    }
+
+    #welcome .greeting {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.9rem;
+      margin: 20px 0;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5); /* Лёгкая тень для читаемости */
+    }
+
+    #welcome p {
+      font-size: 1.2rem;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.9;
+      color: #5d4c3b;
+    }
+
+    /* Блок 3 — Локация */
+    #location {
+      background: url('im2.jpg') no-repeat center;
+      background-size: cover;
+      color: black;
+    }
+
+    #location h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    #location .details {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 35px 25px;
+      max-width: 700px;
+      margin: 25px auto;
+      font-size: 1.15rem;
+    }
+
+    #location iframe {
+      border: none;
+      width: 100%;
+      max-width: 650px;
+      height: 320px;
+      border-radius: 14px;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Блок 4 — Программа */
+    #program {
+      background: #fdf8f2;
+    }
+
+    #program em {
+      font-size: 1.25rem;
+      color: #6b5a4a;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    .event {
+      margin: 50px auto;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .event img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #d4c1ab;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .event .title {
+      font-weight: 500;
+      margin: 18px 0 6px;
+      font-size: 1.3rem;
+      color: #5d4c3b;
+    }
+
+    .event .time {
+      color: #c97a7a;
+      font-weight: 500;
+      font-size: 1.15rem;
+    }
+
+    /* Блок 5 — Таймер */
+    #countdown {
+      background: url('im6.jpg') no-repeat center;
+      background-size: cover;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+    }
+
+    #countdown h2 {
+      font-size: 2.4rem;
+      margin-bottom: 25px;
+      color: white;
+    }
+
+    #timer {
+      font-size: 2.7rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    /* Блок 6 — Заключение */
+    #final {
+      background: url('im7.jpg') no-repeat center;
+      background-size: cover;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #final p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin: 20px 0;
+    }
+
+    #final .photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      padding: 35px 20px;
+      background: #8b5a2b;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      #home h1 { font-size: 3.2rem; }
+      #home .date { font-size: 1.3rem; }
+      #home .content { margin-top: 60px; padding: 35px 20px 15px; }
+
+      #timer { font-size: 2.1rem; }
+
+      .event img { width: 140px; height: 140px; }
+      .event .title { font-size: 1.1rem; }
+      .event .time { font-size: 1rem; }
+
+      #countdown h2 { font-size: 2rem; }
+      #final p { font-size: 1.2rem; }
+      #final .photo { width: 110px; height: 110px; }
+      .down-arrow {
+        width: 55px;
+        height: 55px;
+        font-size: 28px;
+        bottom: 35px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Блок 1: Главный экран -->
+  <section id="home">
+    <div class="content">
+      <h1>Свадьба Ильи и Эсмы</h1>
+      <div class="date">18 ноября 2025 г.</div>
+    </div>
+
+ <div class="music-button">
+      <button id="play-music">🎶 Включить музыку</button>
+    </div>
+
+<div class="down-arrow">↓</div>
+
+   </section>
+
+  <!-- Блок 2: Приветствие -->
+  <section id="welcome" class="section">
+    <img src="ori.png" alt="Орнамент" class="ornament">
+    <div class="greeting">Дорогие Надежда и Иван!</div>
+    <p>
+      Спешим поделиться с вами радостной новостью — у нас скоро свадьба!<br>
+      Мы приглашаем вас разделить с нами радость этого особенного события и стать частью нашей семейной истории. Ваше присутствие сделает наш день еще более значимым и незабываемым.
+    </p>
+  </section>
+
+  <!-- Блок 3: Локация -->
+  <section id="location" class="section">
+    <h2>Локация</h2>
+    <div class="details">
+      <p>
+        Санкт-Петербург. Дворец бракосочетаний №1 (Английская наб., 28)<br><br>
+        Для вашего удобства мы подготовили карту. Надеемся, что вы легко найдете место проведения свадьбы и порадуете нас своим присутствием!
+      </p>
+      <!-- Исправленный iframe — рабочая карта от Яндекс -->
+      <iframe 
+        src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab5f853b37f2d6e1a3b99299b393b324ee7cd0d08880a3ebf53d8a6ca91b8a266&amp;source=constructor" 
+        width="650" 
+        height="320" 
+        frameborder="0" 
+        allowfullscreen 
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Блок 4: Программа -->
+  <section id="program" class="section">
+    <p><em>Собираясь на мероприятие, просим взять с собой ваши прекрасные улыбки и хорошее настроение</em></p>
+
+    <div class="event">
+      <img src="im3.jpeg" alt="Сбор гостей">
+      <div class="title">Сбор гостей</div>
+      <div class="time">10:20–10:30</div>
+    </div>
+
+    <div class="event">
+      <img src="im4.jpeg" alt="Регистрация брака">
+      <div class="title">Регистрация брака</div>
+      <div class="time">10:40–11:00</div>
+    </div>
+
+    <div class="event">
+      <img src="im5.jpeg" alt="Фотосессия">
+      <div class="title">Фотосессия</div>
+      <div class="time">12:00–14:00</div>
+    </div>
+
+    <div class="event">
+      <img src="im8.jpeg" alt="Банкет">
+      <div class="title">Банкет</div>
+      <div class="time">15:00–19:00</div>
+    </div>
+  </section>
+
+  <!-- Блок 5: Таймер -->
+  <section id="countdown" class="section">
+    <h2>До свадьбы осталось</h2>
+    <div id="timer">000 дней 00:00:00</div>
+  </section>
+
+  <!-- Блок 6: Заключение -->
+  <section id="final" class="section">
+    <img src="ori.png" alt="Орнамент" class="ornament">
+    <p>Будем рады видеть Вас на нашем празднике!</p>
+    <img src="imi2.jpg" alt="Илья и Эсма" class="photo">
+  </section>
+
+  <!-- Подвал -->
+  <footer>
+    С любовью, Эсма & Илья ❤️
+  </footer>
+
+  <!-- Фоновая музыка -->
+  <audio id="background-audio" loop>
+    <source src="music1.mp3" type="audio/mpeg">
+    Ваш браузер не поддерживает аудио.
+  </audio>
+
+  <!-- Скрипт таймера -->
+  <script>
+    function updateTimer() {
+      const weddingDate = new Date("November 18, 2025 12:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("timer").innerHTML = "Свадьба уже прошла! 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerHTML = 
+        `${days} дней ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const audio = document.getElementById("background-audio");
+      const playButton = document.getElementById("play-music");
+
+      playButton.addEventListener("click", function () {
+        audio.play()
+          .then(() => {
+            playButton.innerHTML = "🎵 Музыка включена";
+            playButton.disabled = true;
+            playButton.style.opacity = 0.7;
+          })
+          .catch(err => {
+            alert("Не удалось включить музыку. Попробуйте кликнуть ещё раз.");
+            console.error(err);
+          });
+       });
+    });
+  </script>
+
+</body>
+</html>
+
+
